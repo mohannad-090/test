@@ -6,8 +6,6 @@ void main(){
     debugShowCheckedModeBanner: false,
     home: Scaffold(
     body: Container(
-    width: double.infinity,
-    height: double.infinity,
     decoration: BoxDecoration(
       image: DecorationImage(
         image: AssetImage("assets/images/p.jpg"),
@@ -30,13 +28,10 @@ void main(){
             ),
           ),
           SizedBox(height: 10,),
-          Container(
-            child: Center(child: Text("Hello I am",style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 20),),),),
-          Container(
-            child: Center(child: Text("Mohannad Osama",style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 30),),),),
-          Container(
-            child: Center(child: Text("Flutter Developer",style: TextStyle(color: const Color.fromARGB(255, 0, 187, 255),fontSize: 20),),),),
-          Container(
+          Center(child: Text("Hello I am",style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 20),),),
+          Center(child: Text("Mohannad Osama",style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 30),),),
+          Center(child: Text("Flutter Developer",style: TextStyle(color: const Color.fromARGB(255, 0, 187, 255),fontSize: 20),),),
+          SizedBox(
             width: 300,
             child: Center(child: Text("Passionate about building beautiful apps and great user experiences.",textAlign: TextAlign.center,style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 15),),),),
           SizedBox(height: 20),
