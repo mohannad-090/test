@@ -1,42 +1,39 @@
 import 'package:flutter/material.dart';
 
-class CustomContainer extends StatefulWidget {
-  final String text;
-  const CustomContainer({super.key, required this.text});
+class CustomContainer extends StatelessWidget {
+  final String? images;
+  final double? width;
+  final double? height;
+  final BoxFit? fit;
 
-  @override
-  State<CustomContainer> createState() => _CustomContainerState();
-}
-
-class _CustomContainerState extends State<CustomContainer> {
-  int count = 0;
-
-  void increment() => setState(() => count++);
+  const CustomContainer({
+    super.key,
+    this.images,
+    this.width,
+    this.height,
+    this.fit,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
-      decoration: BoxDecoration(
-        color: Colors.green.shade50,
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Colors.green.shade200),
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const SizedBox(height: 10),
-          Text(widget.text, style: const TextStyle(fontSize: 20)),
-          const SizedBox(height: 10),
-          Text('$count', style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: increment,
-            child: const Text('+1'),
-          ),
-          const SizedBox(height: 10),
-        ],
-      ),
+        width: width ?? 100,
+        height: height ?? 100,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image: images != null 
+              ? DecorationImage(
+                  image: AssetImage(images!),
+                  fit: fit ?? BoxFit.cover,
+                ) : null
+        ),
+        child: images == null
+            ? const Icon(
+                Icons.person,
+                size: 50,
+                color: Colors.grey,
+              )
+            : null,
     );
   }
 }
