@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test/custom_container.dart';
+import 'package:test/custom_image.dart';
+import 'package:test/custom_text.dart';
 import 'package:test/social_links.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,9 +30,23 @@ class MyApp extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           SizedBox(height: 10,),
-          Center(child: Text("Hello I am",style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 20),),),
-          Center(child: Text("Mohannad Osama",style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 30),),),
-          Center(child: Text("Flutter Developer",style: TextStyle(color: const Color.fromARGB(255, 0, 187, 255),fontSize: 20),),),
+          CustomText(
+            text: "Hello I am",
+            fontSize: 20,
+            color: Colors.white,
+          ),
+
+          CustomText(
+            text: "Mohannad Osama",
+            fontSize: 30,
+            color: Colors.white,
+          ),
+
+          CustomText(
+            text: "Flutter Developer",
+            fontSize: 20,
+            color: Color.fromARGB(255, 0, 187, 255),
+          ),
           SizedBox(
             width: 300,
             child: Center(child: Text("Passionate about building beautiful apps and great user experiences.",textAlign: TextAlign.center,style: TextStyle(color: const Color.fromARGB(255, 255, 255, 255),fontSize: 15),),),),
